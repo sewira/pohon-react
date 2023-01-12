@@ -45,6 +45,8 @@ function App() {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
+    document.addEventListener('contextmenu', (event) => event.preventDefault());
+
     const removeListenerUp = clickAndHold(btnUpRef.current);
     return () => {
       removeListenerUp();
